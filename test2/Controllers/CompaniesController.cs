@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -17,6 +18,7 @@ namespace test2.Controllers
         // GET: Companies
         public ActionResult Index()
         {
+            var companies = db.Companies.Include(p => p.Persons);
             return View(db.Companies.ToList());
         }
 
@@ -28,6 +30,8 @@ namespace test2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Company company = db.Companies.Find(id);
+            company.Persons = new List<Person>().Where(p => p.CompanyId == id).ToList();
+            
             if (company == null)
             {
                 return HttpNotFound();
