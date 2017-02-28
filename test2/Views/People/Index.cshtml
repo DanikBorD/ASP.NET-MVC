@@ -1,5 +1,5 @@
-﻿@model IEnumerable<test2.Models.Person>
-
+﻿@model PagedList.IPagedList < test2.Models.Person>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
 }
@@ -15,10 +15,10 @@
             @Html.DisplayNameFor(model => model.Company.Name)
         </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            <span>FirstName</span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            <span>LastName</span>
         </th>
         @*<th>
             @Html.DisplayNameFor(model => model.MiddleName)
@@ -55,3 +55,7 @@
 }
 
 </table>
+
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

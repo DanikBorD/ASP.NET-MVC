@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using test2.Models;
 
+
 namespace test2.Controllers
 {
     public class CompaniesController : Controller

@@ -83,6 +83,10 @@ C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\tes
 C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\obj\Debug\test2.csprojResolveAssemblyReference.cache
 C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\obj\Debug\test2.dll
 C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\obj\Debug\test2.pdb
+C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\bin\PagedList.dll
+C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\bin\PagedList.Mvc.dll
+C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\bin\PagedList.xml
+C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\bin\PagedList.Mvc.xml
+C:\Users\danil\OneDrive\документы\visual studio 2015\Projects\test2\test2\obj\Debug\test2.csprojResolveAssemblyReference.cache

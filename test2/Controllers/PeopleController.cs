@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using test2.Models;
+using PagedList;
 
 namespace test2.Controllers
 {
@@ -15,10 +12,47 @@ namespace test2.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: People
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+
+            int currentPage = page ?? 1;
+            int pageSize = 3;
             var persons = db.Persons.Include(p => p.Company);
-            return View(persons.ToList());
+            var result = from i in persons
+                         orderby i.PersonId
+                         select i;
+            //List<Person> list = SampleData.People.GetPeople();
+            return View(result.AsQueryable().ToPagedList<Person>(currentPage, pageSize));
+
+            //var persons = db.Persons.Include(p => p.Company);
+            //int currentPage = page ?? 1;
+            //int pageSize = 3;
+            //PagedList<Person> result = persons.AsQueryable().ToPagedList<Person>(currentPage, pageSize) as PagedList<Person>;
+            //if (Request.IsAjaxRequest())
+            //{
+            //    return PartialView("PesonPagedList", result);
+            //}
+            //return View();
+
+            //var persons = db.Persons.Include(p => p.Company);
+            //int pageSize = 3; // количество объектов на страницу
+            //IEnumerable<Person> pPerPages = persons.Skip((page - 1) * pageSize).Take(pageSize);
+            //PageInfo pageInfo = new PageInfo { PageNumber = page, PageSize = pageSize, TotalItems = 6 };
+            //IndexViewModel ivm = new IndexViewModel { PageInfo = pageInfo, Persons = phonesPerPages };
+            //return View(ivm);
+
+
+            //var persons = db.Persons.Include(p => p.Company);
+            //return View(persons.ToList());
+
+
+            //int pageSize = 3;
+            //int pageNumber = (page ?? 1);
+            //var result = from i in persons
+            //             orderby i.PersonId
+            //             select new {PersonId = i.PersonId, FirstName = i.FirstName, LastName = i.LastName };
+            //return View(result.ToPagedList(pageNumber, pageSize));
+
         }
 
         // GET: People/Details/5

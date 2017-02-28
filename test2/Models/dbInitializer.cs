@@ -15,6 +15,7 @@ namespace test2.Models
             {
                 new Company {Name = "Company 1"},
                 new Company {Name = "Company 2"}
+
             };
 
             companies.ForEach(p => context.Companies.Add(p));
